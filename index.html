@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRONOTIGER</title>
+    <link rel="shortcut icon" href="./src/chrono.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="full-page">
+        <div class="full-chrono">
+            <div>
+                <i style="font-size: 20px;" class="fa" data-type="flag">&#xf024;</i>
+                <i style="font-size: 20px;" class="fa" data-type="reset">&#xf112;</i>
+                <i style="font-size: 18px;" class="fa" data-type="pause">&#xf04c;</i>
+                <i style="font-size: 18px;" class="fa" data-type="play">&#xf04b;</i>
+            </div>
+            <div>
+                <i class="key" data-type="space"></i>
+                <i class="key" data-type="c"></i>
+            </div>
+            <img class="chrono" src="./src/olchrono.png" alt="Something is wrong">
+            <img class="lbutton" src="./src/lbutton.png" alt="Something went wrong" onmouseover="this.src='./src/lbuttonS.png';" onmouseout="this.src='./src/lbutton.png';">
+            <img class="rbutton" src="./src/lbutton.png" alt="Something went wrong" onmouseover="this.src='./src/lbuttonS.png';" onmouseout="this.src='./src/lbutton.png';">
+            <div class="display">
+                <i class="number minute2"></i>
+                <i class="number minute1"></i>
+                <i class="dots"></i>
+                <i class="number second2"></i>
+                <i class="number second1"></i>
+                <i class="dot"></i>
+                <i class="number msec2"></i>
+                <i class="number msec1"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
