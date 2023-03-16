@@ -1,6 +1,5 @@
 const timeDisplay = document.querySelector("#timeDisplay");
 const startBtn = document.querySelector("#startBtn");
-const pauseBtn = document.querySelector("#startBtn");
 const resetBtn = document.querySelector("#resetBtn");
 
 let startTime = 0;
@@ -18,11 +17,34 @@ startBtn.addEventListener("click", () => {
       paused = false;
       startTime = Date.now() - elapsedTime;
       intervalId = setInterval(updateTime, 10);
-   } else {
+   }
+   else{
       paused = true;
+      elapsedTime = Date.now() - startTime;
+      clearInterval(intervalId);
    }
 });
-resetBtn.addEventListener();
+
+resetBtn.addEventListener("click", () => {
+   if(paused){
+      clearInterval(intervalId);
+      startTime = 0;
+      elapsedTime = 0;
+      currentTime = 0;
+      hrs = 0;
+      mins = 0;
+      secs = 0;
+      msec = 0;
+      timeDisplay.textContent = "00:00:00.00"
+   }
+   else {
+      savehrs = hrs;
+      savemins = mins;
+      savesecs = secs;
+      savemsec = msec;
+      console.log("Record: "+savehrs+":"+savemins+":"+savesecs+"."+savemsec);
+   }
+});
 
 function updateTime() {
    elapsedTime = Date.now() - startTime;
@@ -32,7 +54,14 @@ function updateTime() {
    mins = Math.floor((elapsedTime / (1000 * 60)) % 60);
    hrs = Math.floor((elapsedTime / (1000 * 60 * 60)) % 60);
 
-   timeDisplay.textContent = `${hrs}:${mins}:${secs}:${msec}`;
-}
+   msec = pad(msec);
+   secs = pad(secs);
+   mins = pad(mins);
+   hrs = pad(hrs);
 
-/*CONTINUE 8:46 OF BROCODE VIDEO*/
+   timeDisplay.textContent = `${hrs}:${mins}:${secs}.${msec}`;
+
+   function pad(unit) {
+      return (("0") + unit).length > 2 ? unit : "0" + unit;
+   }
+}
