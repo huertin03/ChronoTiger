@@ -30,6 +30,7 @@ body {
     background-color: #27272700;
     background-repeat: no-repeat;
     border: 0;
+    /*transition: transform 0.1s;*/
 }
 .buttons:hover {
     background-image: url(./src/lbuttonS.png);
@@ -119,16 +120,57 @@ body {
     background-size: cover;
     
 }
-.display > .number {
+/*.display > .number {
     width: 30%;
-    background-position: -4px;
-}
+    /*background-position: -4px;*/
+
 .display > .dots,.dot {
     width: 10%;
 }
 .dots {
-    background-position: -426px;
+    background-position: -423px;
 }
 .dot {
-    background-position: -442px;
+    background-position: -439px;
 }
+.number0 {
+    width: 30%;
+    background-position: -4px;
+}
+.number1 {
+    width: 30%;
+    background-position: -50px;
+}
+.number2 {
+    width: 30%;
+    background-position: -89px;
+}
+.number3 {
+    width: 30%;
+    background-position: -131px;
+}
+.number4 {
+    width: 30%;
+    background-position: -172px;
+}
+.number5 {
+    width: 30%;
+    background-position: -215px;
+}
+.number6 {
+    width: 30%;
+    background-position: -257px;
+}
+.number7 {
+    width: 30%;
+    background-position: -298px;
+}
+.number8 {
+    width: 30%;
+    background-position: -341px;
+}
+.number9 {
+    width: 30%;
+    background-position: -383px;
+}
+
