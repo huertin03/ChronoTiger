@@ -26,6 +26,7 @@ body {
     z-index: 6;
     width: 96px;
     height: 95px;
+    padding: 0;
     background-image: url(./src/lbutton.png);
     background-color: #27272700;
     background-repeat: no-repeat;
@@ -107,70 +108,63 @@ body {
 /*DISPLAY AND NUMBER*/
 .display {
     display: flex;
-    width: 250px;
+    gap: 1px;
+    width: 267px;
     height: 75px;
-    /*border: #272727 solid 2px;*/
     position: absolute;
-    transform: translate(165px, 200px);
+    transform: translate(156px, 200px);
     z-index: 10;
 }
 .display > i {
-    background-image: url(./src/numbers2.png);
+    background-image: url(./src/numbers3.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    
 }
-/*.display > .number {
-    width: 30%;
-    /*background-position: -4px;*/
 
-.display > .dots,.dot {
-    width: 10%;
-}
 .dots {
-    background-position: -423px;
+    width: 10%;
+    background-position: -473px;
 }
 .dot {
-    background-position: -439px;
+    width: 10%;
+    background-position: -490px;
 }
 .number0 {
     width: 30%;
-    background-position: -4px;
+    background-position: -5.5px;
 }
 .number1 {
     width: 30%;
-    background-position: -50px;
+    background-position: -52px;
 }
 .number2 {
     width: 30%;
-    background-position: -89px;
+    background-position: -99px;
 }
 .number3 {
     width: 30%;
-    background-position: -131px;
+    background-position: -147px;
 }
 .number4 {
     width: 30%;
-    background-position: -172px;
+    background-position: -193px;
 }
 .number5 {
     width: 30%;
-    background-position: -215px;
+    background-position: -240.5px;
 }
 .number6 {
     width: 30%;
-    background-position: -257px;
+    background-position: -287.5px;
 }
 .number7 {
     width: 30%;
-    background-position: -298px;
+    background-position: -334px;
 }
 .number8 {
     width: 30%;
-    background-position: -341px;
+    background-position: -381.5px;
 }
 .number9 {
     width: 30%;
-    background-position: -383px;
+    background-position: -429px;
 }
-
