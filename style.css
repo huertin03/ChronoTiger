@@ -168,3 +168,32 @@ body {
     width: 30%;
     background-position: -429px;
 }
+
+/*SCOREBOARD*/
+#scoreboard {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    position: absolute;
+    z-index: 10;
+    transform: translate(188px, 285px);
+    width: 192px;
+    height: 57px;
+    border: #2727279d solid 2px;
+    padding: 4px;
+    border-radius: 3px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: 'Courier New', Courier, monospace;
+}
+#scoreboard::-webkit-scrollbar {
+    width: 3px;
+}
+#scoreboard::-webkit-scrollbar-track {
+    background: #27272700;
+}
+#scoreboard::-webkit-scrollbar-thumb {
+    background: #272727;
+    border-radius: 5px;
+}

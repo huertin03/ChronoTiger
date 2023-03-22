@@ -8,25 +8,29 @@ let startTime = 0;
 let elapsedTime = 0;
 let currentTime = 0;
 let paused = true;
+let firstrecord = true;
 let intervalId;
 let hrs = 0;
 let mins = 0;
 let secs = 0;
 let msec = 0;
 
-let display = "00:00.00";
+let record = "00:00.00";
+const score = document.getElementById("scoreboard");
+let mark = 1;
+
 
 function fade(element) {
-   var op = 1;  // initial opacity
+   var op = 1;
    var timer = setInterval(function () {
        if (op <= 0.1){
            clearInterval(timer);
            element.style.display = 'none';
        }
        element.style.opacity = op;
-       element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+       element.style.top = ((op-1)*25)+"px";
        op -= op * 0.1;
-   }, 50);
+   }, 20);
 }
 
 document.addEventListener("keypress", function(event) {
@@ -36,6 +40,7 @@ document.addEventListener("keypress", function(event) {
    }
    if (event.key === "c") {
       document.getElementById("resetBtn").click();
+      fade(c);
    }
 });
 
@@ -58,18 +63,29 @@ resetBtn.addEventListener("click", () => {
       startTime = 0;
       elapsedTime = 0;
       currentTime = 0;
+      firstrecord = true;
       hrs = 0;
       mins = 0;
       secs = 0;
       msec = 0;
       position("00:00.00");
+      score.style.display = 'none';
+      eraseChilds();
+      mark = 1;
    }
    else {
-      savehrs = hrs;
-      savemins = mins;
-      savesecs = secs;
-      savemsec = msec;
-      console.log("Record: "+savehrs+":"+savemins+":"+savesecs+"."+savemsec);
+      if (!(hrs == "00")) {
+         record = hrs+":"+mins+":"+secs;
+      } else {
+         record = mins+":"+secs+"."+msec; 
+      }
+
+      if (firstrecord) {
+         score.style.display = 'flex';
+      }
+
+      addRecord(record);
+      firstrecord = false;
    }
 });
 
@@ -107,4 +123,19 @@ function position(dis) {
          else clase = "number"+dis.charAt(i);
          document.getElementById(i).className = clase;
       }     
+}
+
+function addRecord(rec) {
+   var div = document.createElement("div");
+   div.innerHTML = mark+".--------"+rec;
+   mark += 1;
+
+   score.appendChild(div);
+   score.scrollTop = score.scrollHeight;
+}
+
+function eraseChilds() {
+   while (score.firstChild) {
+      score.removeChild(score.lastChild);
+   }
 }
